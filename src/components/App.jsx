@@ -16,6 +16,7 @@ class App extends Component {
     filter: '',
   }
 
+  // Add contacts to localStorage
   async componentDidMount() {
     const data = localStorage.getItem(CONTACTS_KEY);
 
@@ -28,6 +29,7 @@ class App extends Component {
     }
   }
 
+  // Update contacts in localStorage
   componentDidUpdate(_prevProps, prevState) {
     if(prevState?.contacts.length !== this.state.contacts.length) {
       localStorage.setItem(CONTACTS_KEY, JSON.stringify(this.state.contacts));
